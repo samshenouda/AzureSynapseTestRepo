@@ -36,8 +36,10 @@
 				"sparkVersion": "2.4",
 				"nodeCount": 10,
 				"cores": 4,
-				"memory": 28
-			}
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
 		},
 		"cells": [
 			{
@@ -75,8 +77,7 @@
 					"# display(df.limit(10))\n",
 					"df.write.mode(\"overwrite\").saveAsTable(\"default.NYC_TLC_YELLOW\")"
 				],
-				"attachments": null,
-				"execution_count": null
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -218,7 +219,9 @@
 			},
 			{
 				"cell_type": "code",
-				"source": [],
+				"source": [
+					""
+				],
 				"execution_count": null
 			}
 		]
