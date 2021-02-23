@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook1",
+				"name": "TestNotebook1",
 				"type": "SynapseNotebook",
 				"dependsOn": [],
 				"policy": {
