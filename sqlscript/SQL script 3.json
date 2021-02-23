@@ -1,0 +1,16 @@
+{
+	"name": "SQL script 3",
+	"properties": {
+		"content": {
+			"query": "SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://dlforsynapseanalytics.dfs.core.windows.net/fsforsynapseanalytics/NYCTaxi/PassengerCountStats_parquetformat/part-00000-2ef3b547-ab15-4d23-9552-675fbec00bd0-c000.snappy.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "Built-in",
+				"databaseName": "master"
+			}
+		},
+		"type": "SqlQuery"
+	}
+}

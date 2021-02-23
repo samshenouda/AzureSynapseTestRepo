@@ -1,0 +1,55 @@
+{
+	"name": "Notebook 2",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "ApacheSparkPool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/abc386ce-2b40-4268-9a34-a5539e5b3933/resourceGroups/rgSynapseAnalytics/providers/Microsoft.Synapse/workspaces/wstrysynapseanalyticsservice/bigDataPools/ApacheSparkPool",
+				"name": "ApacheSparkPool",
+				"type": "Spark",
+				"endpoint": "https://wstrysynapseanalyticsservice.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ApacheSparkPool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"%%pyspark\r\n",
+					"df = spark.read.load('abfss://fsforsynapseanalytics@dlforsynapseanalytics.dfs.core.windows.net/NYCTaxi/PassengerCountStats_parquetformat/part-00000-2ef3b547-ab15-4d23-9552-675fbec00bd0-c000.snappy.parquet', format='parquet')\r\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}
